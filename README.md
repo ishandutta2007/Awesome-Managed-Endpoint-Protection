@@ -1,31 +1,42 @@
-# Awesome Managed Endpoint Protection
+# 🛡️ Awesome Managed Endpoint Protection
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![Track Awesome List](https://www.trackawesomelist.com/badge.svg)](https://www.trackawesomelist.com/ishandutta2007/Awesome-Managed-Endpoint-Protection/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+<p align="center">
+  <img src="assets/banner.svg" alt="Awesome Managed Endpoint Protection Banner" width="100%">
+</p>
 
-> A curated list of leading **Managed Endpoint Protection**, **Managed Detection and Response (MDR)**, **Managed EDR/XDR services**, and battle-tested **open-source endpoint security tools** for 24/7 threat detection, proactive hunting, and rapid incident containment.
+<p align="center">
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awssome"/></a>
+  <a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
+  <a href="https://www.trackawesomelist.com/ishandutta2007/Awesome-Managed-Endpoint-Protection/"><img src="https://www.trackawesomelist.com/badge.svg" alt="Track Awesome List"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
+  <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
+</p>
 
----
-
-## Table of Contents
-
-- [Sector Overview & Market Dynamics](#sector-overview--market-dynamics)
-- [SaaS & Hosted Managed Endpoint Protection Platforms](#saas--hosted-managed-endpoint-protection-platforms)
-- [Open-Source Endpoint Detection, Forensics & Response Projects](#open-source-endpoint-detection-forensics--response-projects)
-- [Evaluation Criteria & Architectural Trade-offs](#evaluation-criteria--architectural-trade-offs)
-- [How to Contribute](#how-to-contribute)
-- [Disclaimer](#disclaimer)
+> 🚀 A curated list of leading **Managed Endpoint Protection**, **Managed Detection and Response (MDR)**, **Managed EDR/XDR services**, and battle-tested **open-source endpoint security tools** for 24/7 threat detection, proactive hunting, and rapid incident containment.
 
 ---
 
-## Sector Overview & Market Dynamics
+## 📑 Table of Contents
+
+- [📊 Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
+- [🏢 SaaS & Hosted Managed Endpoint Protection Platforms](#-saas--hosted-managed-endpoint-protection-platforms)
+- [💻 Open-Source Endpoint Detection, Forensics & Response Projects](#-open-source-endpoint-detection-forensics--response-projects)
+- [📐 Evaluation Criteria & Architectural Trade-offs](#-evaluation-criteria--architectural-trade-offs)
+- [🤝 How to Contribute](#-how-to-contribute)
+- [💖 Support & Community](#-support--community)
+- [⭐ Star History](#star-history)
+- [⚠️ Disclaimer](#️-disclaimer)
+
+---
+
+## 📊 Sector Overview & Market Dynamics
 
 The global **Managed Detection and Response (MDR) and Managed Endpoint Protection** sector is estimated at **$5.1B–$6.2B in 2025–2026**, expanding at a rapid **21–23% CAGR** driven by pervasive cybersecurity skill shortages, advanced ransomware campaigns, and distributed remote-work footprints. The industry exhibits **moderate consolidation at the pure technology platform layer** (dominated by major vendors like CrowdStrike, Microsoft, and SentinelOne) but remains **highly fragmented across managed service delivery**, where specialized MDR providers, boutique SOC operations, and regional MSSPs compete aggressively on human expertise, SLA guarantees, multi-signal telemetry integration, and customized containment runbooks.
 
 ---
 
-## SaaS & Hosted Managed Endpoint Protection Platforms
+## 🏢 SaaS & Hosted Managed Endpoint Protection Platforms
 
 Managed Endpoint Protection delivers 24/7 monitoring, AI-driven behavioral telemetry analysis, proactive human threat hunting, and automated incident containment without demanding an in-house Security Operations Center (SOC).
 
@@ -46,7 +57,7 @@ The table below benchmarks the premier SaaS and hosted platforms, sorted by **Co
 
 ---
 
-## Open-Source Endpoint Detection, Forensics & Response Projects
+## 💻 Open-Source Endpoint Detection, Forensics & Response Projects
 
 Open-source tools offer transparency, customizability, and cost-effective telemetry collection. However, **open source provides the tooling, not the human 24/7 SOC team**. Organizations deploying open-source endpoint tooling must provide their own detection engineers and incident responders.
 
@@ -68,7 +79,7 @@ The table below is sorted by **GitHub Stars in descending order**:
 
 ---
 
-## Evaluation Criteria & Architectural Trade-offs
+## 📐 Evaluation Criteria & Architectural Trade-offs
 
 When choosing between **Commercial Managed Endpoint Protection (MDR/Managed EDR)** and **Open-Source Self-Hosted EDR**:
 
@@ -87,22 +98,38 @@ flowchart TD
     D -- "In-Kernel Linux Prevention" --> G["owLSM / eBPF Sensors"]
 ```
 
-1. **Total Cost of Ownership (TCO):** Commercial MDR bundles the cost of software licenses, infrastructure, and human shift staffing. Open-source tooling eliminates license costs but incurs significant personnel overhead for rule authoring, log storage, alert tuning, and 24/7 on-call rotations.
-2. **Mean Time to Detect (MTTD) & Respond (MTTR):** Top-tier MDR services boast sub-30-minute containment guarantees. Self-hosted stacks depend entirely on internal team responsiveness.
-3. **Prevention vs. Investigation:** Tools like **Velociraptor** excel at deep post-incident forensic archaeology ("what happened?"), whereas **SentinelOne**, **CrowdStrike**, and **owLSM** focus on immediate in-line execution interception and behavioral blocking.
+1. 💰 **Total Cost of Ownership (TCO):** Commercial MDR bundles the cost of software licenses, infrastructure, and human shift staffing. Open-source tooling eliminates license costs but incurs significant personnel overhead for rule authoring, log storage, alert tuning, and 24/7 on-call rotations.
+2. ⏱️ **Mean Time to Detect (MTTD) & Respond (MTTR):** Top-tier MDR services boast sub-30-minute containment guarantees. Self-hosted stacks depend entirely on internal team responsiveness.
+3. 🛡️ **Prevention vs. Investigation:** Tools like **Velociraptor** excel at deep post-incident forensic archaeology ("what happened?"), whereas **SentinelOne**, **CrowdStrike**, and **owLSM** focus on immediate in-line execution interception and behavioral blocking.
 
 ---
 
-## How to Contribute
+## 🤝 How to Contribute
 
-1. Fork the repository.
-2. Add or update entries in `README.md` following the tabular layout.
-3. Verify that all pricing, valuation metrics, and GitHub star URLs are verified and accurate.
-4. Submit a Pull Request with a clear description of the change.
+1. 🍴 Fork the repository.
+2. ✍️ Add or update entries in `README.md` following the tabular layout.
+3. 🔍 Verify that all pricing, valuation metrics, and GitHub star URLs are verified and accurate.
+4. 🚀 Submit a Pull Request with a clear description of the change.
 
 ---
 
-## Disclaimer
+## 💖 Support & Community
 
-- This repository is a curated community knowledge base created for educational and architectural evaluation purposes.
-- Product pricing, features, market capitalization, and enterprise valuations fluctuate based on corporate developments, market conditions, and custom contract negotiations. Always verify quotes directly with official vendor sales teams and authorized channel partners.
+Thank you so much for using and exploring this curated guide! If you find this repository valuable for evaluating endpoint defense architectures and managed security providers, please consider supporting the project:
+
+- ⭐ **Star** this repository to help other security practitioners, SOC engineers, and founders discover it.
+- 🍴 **Fork** and contribute new entries, verified pricing data, and detection tooling updates.
+- 📢 **Share** this resource with your colleagues, infosec networks, and blue team communities.
+- ☕ **Buy a coffee / Sponsor**: If you would like to support ongoing curation and security tooling research, you can sponsor via the [GitHub Sponsors Dashboard](https://github.com/sponsors/ishandutta2007).
+
+---
+
+##  Star History
+[![Star History Chart](https://star-history.dera.page/svg?repos=ishandutta2007/Awesome-Managed-Endpoint-Protection&type=date&legend=top-left)](https://ttar-history.dera.page/#ishandutta2007/Awesome-Managed-Endpoint-Protection&type=date&legend=top-left)
+
+---
+
+## ⚠️ Disclaimer
+
+- 📖 This repository is a community-curated knowledge base created for educational and architectural evaluation purposes.
+- ⚖️ Product pricing, features, market capitalization, and enterprise valuations fluctuate based on corporate developments, market conditions, and custom contract negotiations. Always verify quotes directly with official vendor sales teams and authorized channel partners.

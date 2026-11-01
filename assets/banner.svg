@@ -1,0 +1,157 @@
+<svg fill="none" viewBox="0 0 1200 360" width="100%" height="360" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background linear gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+
+    <!-- Accent glow gradient -->
+    <linearGradient id="cyber-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+
+    <!-- Radar sweep gradient -->
+    <radialGradient id="radar-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3"/>
+      <stop offset="70%" stop-color="#818cf8" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Filter for soft neon glow -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <style>
+      .cyber-grid { stroke: #334155; stroke-opacity: 0.25; stroke-width: 1; }
+      .radar-circle { stroke: #38bdf8; stroke-opacity: 0.2; fill: none; }
+      .beacon { transform-origin: 1040px 180px; }
+      
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.3; transform: scale(1); }
+        50% { opacity: 0.65; transform: scale(1.05); }
+      }
+      @keyframes floatSlow {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+      }
+      @keyframes scanLine {
+        0% { transform: translateY(-20px); opacity: 0; }
+        50% { opacity: 0.8; }
+        100% { transform: translateY(380px); opacity: 0; }
+      }
+      @keyframes ping {
+        0% { r: 10px; opacity: 0.8; stroke-width: 2; }
+        100% { r: 90px; opacity: 0; stroke-width: 0.5; }
+      }
+      @keyframes shieldSpin {
+        0% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: 400; }
+      }
+
+      .pulse-bg { animation: pulseGlow 6s ease-in-out infinite; transform-origin: center; }
+      .float-badge { animation: floatSlow 4s ease-in-out infinite; }
+      .scanner-beam { animation: scanLine 7s linear infinite; }
+      .radar-wave-1 { animation: ping 3.5s cubic-bezier(0, 0.2, 0.8, 1) infinite; }
+      .radar-wave-2 { animation: ping 3.5s cubic-bezier(0, 0.2, 0.8, 1) infinite 1.75s; }
+      .shield-orbit { stroke-dasharray: 60 40; animation: shieldSpin 12s linear infinite; }
+    </style>
+  </defs>
+
+  <!-- Background Base Canvas -->
+  <rect width="1200" height="360" rx="16" fill="url(#bg-grad)"/>
+
+  <!-- Subtle Cyber Tech Grid in Background -->
+  <g class="cyber-grid">
+    <line x1="0" y1="60" x2="1200" y2="60"/>
+    <line x1="0" y1="120" x2="1200" y2="120"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/>
+    <line x1="0" y1="240" x2="1200" y2="240"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="150" y1="0" x2="150" y2="360"/>
+    <line x1="300" y1="0" x2="300" y2="360"/>
+    <line x1="450" y1="0" x2="450" y2="360"/>
+    <line x1="600" y1="0" x2="600" y2="360"/>
+    <line x1="750" y1="0" x2="750" y2="360"/>
+    <line x1="900" y1="0" x2="900" y2="360"/>
+    <line x1="1050" y1="0" x2="1050" y2="360"/>
+  </g>
+
+  <!-- Dynamic Ambient Glow behind elements -->
+  <circle cx="1040" cy="180" r="140" fill="url(#radar-glow)" class="pulse-bg"/>
+
+  <!-- Scanning line across graphic -->
+  <line x1="0" y1="0" x2="1200" y2="0" stroke="url(#cyber-glow)" stroke-width="2" class="scanner-beam" opacity="0.4"/>
+
+  <!-- Threat Hunting Radar & Shield Graphic (Right Side) -->
+  <g transform="translate(1040, 180)">
+    <!-- Radar concentric rings -->
+    <circle cx="0" cy="0" r="110" class="radar-circle" stroke-dasharray="4 6"/>
+    <circle cx="0" cy="0" r="80" class="radar-circle"/>
+    <circle cx="0" cy="0" r="50" class="radar-circle"/>
+    <circle cx="0" cy="0" r="20" class="radar-circle"/>
+
+    <!-- Dynamic ping pulses -->
+    <circle cx="0" cy="0" r="10" stroke="#38bdf8" fill="none" class="radar-wave-1"/>
+    <circle cx="0" cy="0" r="10" stroke="#818cf8" fill="none" class="radar-wave-2"/>
+
+    <!-- Crosshairs -->
+    <line x1="-120" y1="0" x2="120" y2="0" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+    <line x1="0" y1="-120" x2="0" y2="120" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+
+    <!-- Dynamic Rotating Outer Orbit Ring -->
+    <circle cx="0" cy="0" r="95" stroke="#38bdf8" stroke-width="2" fill="none" class="shield-orbit" opacity="0.6"/>
+
+    <!-- Center Shield Icon -->
+    <path d="M0 -35 L26 -22 C26 12 12 30 0 38 C-12 30 -26 12 -26 -22 Z" fill="#0f172a" stroke="url(#cyber-glow)" stroke-width="3.5" filter="url(#glow)"/>
+    <!-- Internal Checkmark / Lock motif -->
+    <path d="M-8 -2 L-2 4 L10 -8" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- Left Content Canvas: Foreground Typography (Guaranteed Unobscured) -->
+  <g transform="translate(60, 0)">
+    <!-- Small Category Pill -->
+    <g transform="translate(0, 52)">
+      <rect width="260" height="30" rx="15" fill="#1e293b" stroke="#38bdf8" stroke-opacity="0.6" stroke-width="1"/>
+      <circle cx="16" cy="15" r="4" fill="#38bdf8"/>
+      <text x="30" y="20" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="1.2">CURATED CYBERSECURITY LIST</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="140" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="42" font-weight="800" letter-spacing="-0.8">
+      Awesome Managed Endpoint Protection
+    </text>
+
+    <!-- Subtitle / Value Proposition -->
+    <text x="0" y="186" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="18" font-weight="400">
+      24/7 Managed EDR, Proactive Threat Hunting &amp; Self-Hosted Endpoint Defense
+    </text>
+
+    <!-- Dynamic Metric / Architecture Capability Pills (Below text in foreground) -->
+    <g transform="translate(0, 235)">
+      <!-- Pill 1: EDR / XDR -->
+      <g>
+        <rect width="180" height="42" rx="8" fill="#1e293b" fill-opacity="0.9" stroke="#334155" stroke-width="1.2"/>
+        <text x="16" y="26" fill="#38bdf8" font-family="monospace" font-size="13" font-weight="700">⚡ 24/7 SOC &amp; MDR</text>
+      </g>
+      <!-- Pill 2: Threat Hunting -->
+      <g transform="translate(195, 0)">
+        <rect width="200" height="42" rx="8" fill="#1e293b" fill-opacity="0.9" stroke="#334155" stroke-width="1.2"/>
+        <text x="16" y="26" fill="#818cf8" font-family="monospace" font-size="13" font-weight="700">🎯 Active Threat Hunting</text>
+      </g>
+      <!-- Pill 3: Open Source Tooling -->
+      <g transform="translate(410, 0)">
+        <rect width="210" height="42" rx="8" fill="#1e293b" fill-opacity="0.9" stroke="#334155" stroke-width="1.2"/>
+        <text x="16" y="26" fill="#c084fc" font-family="monospace" font-size="13" font-weight="700">🛡️ Self-Hosted Open EDR</text>
+      </g>
+    </g>
+
+    <!-- Bottom border accent line -->
+    <rect x="0" y="318" width="620" height="3" rx="1.5" fill="url(#cyber-glow)"/>
+  </g>
+</svg>
