@@ -1,187 +1,108 @@
-# Awesome-Managed-Endpoint-Protection
+# Awesome Managed Endpoint Protection
 
-## Top Managed Endpoint Protection Ecosystem
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+[![Track Awesome List](https://www.trackawesomelist.com/badge.svg)](https://www.trackawesomelist.com/ishandutta2007/Awesome-Managed-Endpoint-Protection/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-
-
-**Curated List of SaaS Products & Open-Source GitHub Projects**  
-
-*Focused on 24/7 Managed EDR, Human-Led Threat Hunting & Self-Hosted Endpoint Defense*  
-
-**Last updated: November 2026**
-
-
-
-This repository tracks notable **SaaS platforms** and **open-source projects** for **Managed Endpoint Protection**. These services and tools enable organizations to detect and respond to endpoint threats—malware, ransomware, fileless attacks, and living-off-the-land techniques—combining automated detection with human expertise to contain incidents before they spread.
-
-
-
-**Examples** include CrowdStrike Falcon Endpoint Protection Complete, Arctic Wolf Managed Endpoint, Red Canary MDR, SentinelOne Vigilance, Sophos MDR, Rapid7 MDR, eSentire Managed Endpoint, Huntress Managed EDR, Expel MDR, and Secureworks Taegis MDR (the category leaders).
-
-
-
-**Open-source emphasis**: Managed Endpoint Protection is a domain where the **"managed" component is fundamentally a human service**—24/7 monitoring by expert analysts who investigate and remediate threats on your behalf. No open-source project replicates that service. What open-source *does* provide is **endpoint detection and response (EDR) tooling that organizations can run themselves**: **Wazuh** is the most recommended self-hosted option—a GPLv2 platform combining SIEM and XDR with file integrity monitoring, vulnerability detection, and active response, requiring a technical team to configure and maintain . **Velociraptor** excels at threat hunting and forensics at scale but is explicitly **not a continuous EDR**—it is a query-driven investigation tool, not a real-time prevention platform . The critical caveat: **open-source gives you the tools, not the team**—managed endpoint protection is a service delivered by human analysts, and organizations without dedicated security staff should evaluate MDR providers rather than attempting to self-manage with open-source tools alone.
-
-
-
-Contributions welcome! Open a PR to add/update entries. Keep descriptions factual and link to official sites.
-
-
-
-## Table of Contents
-
-- [SaaS/Hosted Platforms](#saas-products)
-
-- [Open-Source GitHub Projects](#open-source-github-projects)
-
-- [How to Contribute](#how-to-contribute)
-
-- [Disclaimer](#disclaimer)
-
-
-
-## SaaS/Hosted Platforms
-
-
-
-- **[CrowdStrike Falcon Endpoint Protection Complete](https://www.crowdstrike.com/)**  
-
-  Fully managed endpoint protection combining Falcon Prevent (NGAV), Falcon Insight (EDR), and Falcon OverWatch (managed threat hunting) with Falcon Complete's 24/7 team that handles detection, investigation, and remediation on your behalf. Industry-reported pricing: Falcon Go/Pro roughly $60–$100 per endpoint/year, Falcon Enterprise around $185 per endpoint/year, and Falcon Complete is quote-only . **Best for organizations wanting fully managed endpoint security** without building an internal SOC—but it is the premium-priced option with quote-based renewal escalation risk .
-
-
-
-- **[Arctic Wolf Managed Endpoint](https://arcticwolf.com/)**  
-
-  Managed detection and response with a **Concierge Security Team** providing 24/7 monitoring, threat hunting, and response across endpoints, identities, and cloud. **Best for organizations wanting managed endpoint protection integrated with broader security operations**.
-
-
-
-- **[Red Canary MDR](https://redcanary.com/)**  
-
-  Managed detection and response with **customer-validated 99% threat accuracy**; Q3 FY25 innovations include GenAI agent flows achieving **60%+ faster mean time to investigate**, a Security Data Lake for long-term retention, and Managed XSIAM integration with Palo Alto Cortex . **Best for organizations wanting high-accuracy MDR** across endpoints and cloud.
-
-
-
-- **[SentinelOne Vigilance](https://www.sentinelone.com/)**  
-
-  Managed threat hunting add-on to SentinelOne's autonomous EDR; human analysts hunt for threats and respond on the customer's behalf. SentinelOne is generally more economical than CrowdStrike in the mid-market segment .
-
-
-
-- **[Sophos Managed Detection and Response](https://www.sophos.com/)**  
-
-  MDR with threat hunting, detection, and response integrated with Sophos endpoint protection; ITDR add-on (GA October 2025) extends coverage to identity threats .
-
-
-
-- **[Rapid7 MDR](https://www.rapid7.com/)**  
-
-  Managed detection and response combining InsightIDR with Rapid7's SOC team.
-
-
-
-- **[eSentire Managed Endpoint](https://www.esentire.com/)**  
-
-  Managed detection and response service with 24/7 threat hunting.
-
-
-
-- **[Huntress Managed EDR](https://www.huntress.com/)**  
-
-  Managed detection and response built for small businesses and MSPs; combines endpoint detection with a **human threat hunting team** that investigates and responds to incidents.
-
-
-
-- **[Expel MDR](https://expel.com/)**  
-
-  MDR with **Ruxie** agentic AI that applies machine learning and structured reasoning to alerts—auto-closing benign noise and returning verdicts with full evidence in under 30 seconds .
-
-
-
-- **[Secureworks Taegis MDR](https://www.secureworks.com/)**  
-
-  Cloud-native XDR platform with managed detection and response services.
-
-
-
-## Open-Source GitHub Projects
-
-
-
-### Full EDR/SIEM Platforms (Wazuh)
-
-
-
-- **[Wazuh](https://github.com/wazuh/wazuh)**  
-
-  The **most recommended self-hosted open-source EDR/SIEM platform** (GPLv2) . Features: **intrusion detection** (malware, rootkits, suspicious anomalies); **log data analysis** with rule-based detection; **file integrity monitoring (FIM)** for content, permissions, ownership, and attributes ; **vulnerability detection** correlated with CVE databases; **configuration assessment (SCA)** against hardening guides; **active response** for threat containment; and **regulatory compliance** reporting (PCI DSS, GDPR, HIPAA) . **Recommended by practitioners** as the 🥇 choice for production environments requiring a free, self-hosted EDR with Windows agent support, FIM, event logs, Sysmon, and a complete dashboard . **Caveats**: **no real-time prevention**—detection is log-based rather than kernel-instrumented; requires a technical team for deployment, tuning, and maintenance; the indexer (OpenSearch) consumes significant resources . **Best for organizations with security staff** wanting a comprehensive self-hosted platform—**not a replacement for managed MDR** if you lack the team to operate it.
-
-
-
-### Threat Hunting & Forensics (Velociraptor)
-
-
-
-- **[Velociraptor](https://github.com/Velocidex/velociraptor)**  
-
-  The **leading open-source endpoint visibility and response platform for threat hunting** (Go, 4k+ GitHub stars) . Features: **VQL (Velociraptor Query Language)** for custom queries; **artifact-based collection**; **live response actions** (kill process, isolate host, dump memory); **VFS for interactive endpoint inspection**; and **hunts across thousands of hosts** . **Critical distinction**: **Velociraptor is NOT a continuous EDR**—it is a query-driven hunting and forensics tool . It excels at answering "what exactly did the attacker touch, and when?" but does not provide real-time detection or prevention . **Recommended as a complement to Wazuh** for advanced threat hunting and incident response . **Best for organizations with skilled analysts** wanting deep forensic capabilities—not for organizations seeking automated endpoint protection.
-
-
-
-### Additional Strong Open-Source Options
-
-
-
-- **OpenEDR (Xcitium/Comodo)** — **CAUTION**: The open-source EDR agent has **known security maintenance issues**, including high-risk vulnerabilities reported in 2026 (local privilege-boundary / RCE / SYSTEM execution) . **Not recommended for new production deployments**—use Wazuh instead.
-
-- **Rustinel** — Cross-platform EDR agent (Windows/Linux/macOS) that normalizes OS telemetry and evaluates Sigma rules, YARA signatures, and IOC lists, writing alerts to local ECS NDJSON files . **Explicitly lacks kernel self-protection and anti-tamper**—a privileged attacker can stop it . **Best for detection engineering and labs**, not production blocking.
-
-- **Fibratus** — Windows-only behavioral detection on ETW kernel telemetry with YARA memory scanning and Python "filaments" for custom detections . **Needs admin/SYSTEM rights**; best treated as detection engineering tooling, not a hardened production sensor .
-
-- **owLSM** — Cybereason's research project running Sigma-style rules **inside the Linux kernel** via eBPF LSM hooks for real-time blocking . **Most production-advanced** of the three, but prevention rules require per-environment tuning .
-
-
-
-**Frameworks for building custom systems**: For a **complete self-hosted EDR/SIEM with FIM, vulnerability detection, and compliance reporting**, Wazuh is the mature standard . For **threat hunting and forensic investigation at scale**, Velociraptor complements Wazuh but does not replace continuous EDR . **No open-source project provides managed endpoint protection**—that is a human service. Organizations requiring 24/7 MDR should evaluate CrowdStrike Falcon Complete, Arctic Wolf, Red Canary, Huntress, or Expel rather than attempting to self-manage with open-source tools alone.
-
-
-
-## How to Contribute
-
-
-
-1. Fork the repo.
-
-2. Add/edit entries in `README.md` (follow existing format).
-
-3. Include: name, link, 1–2 sentence description, and whether it's SaaS or open-source.
-
-4. Submit PR with a short explanation.
-
-
-
-Star the repo if you find it useful!
-
-
-
-## Disclaimer
-
-
-
-- This is a **community-curated** list — not exhaustive and not an endorsement.
-
-- Managed endpoint protection platforms handling security telemetry must comply with organizational security policies and privacy regulations; **self-hosted EDR tools require skilled operators**—Wazuh and Velociraptor are powerful but demand expertise to configure and interpret .
-
-- **Open-source cannot replicate managed endpoint protection**—managed EDR is a service delivered by human analysts 24/7 (CrowdStrike OverWatch, Arctic Wolf Concierge Security Team, Red Canary SOC) . Open-source provides **tools (Wazuh, Velociraptor)** but not the human expertise and continuous monitoring that define managed endpoint protection. **OpenEDR has known security maintenance issues and is not recommended for new production deployments** .
-
-- Verify license terms for commercial use; Wazuh uses GPLv2 , and Velociraptor is open-source (check repository).
-
-
+> A curated list of leading **Managed Endpoint Protection**, **Managed Detection and Response (MDR)**, **Managed EDR/XDR services**, and battle-tested **open-source endpoint security tools** for 24/7 threat detection, proactive hunting, and rapid incident containment.
 
 ---
 
+## Table of Contents
 
+- [Sector Overview & Market Dynamics](#sector-overview--market-dynamics)
+- [SaaS & Hosted Managed Endpoint Protection Platforms](#saas--hosted-managed-endpoint-protection-platforms)
+- [Open-Source Endpoint Detection, Forensics & Response Projects](#open-source-endpoint-detection-forensics--response-projects)
+- [Evaluation Criteria & Architectural Trade-offs](#evaluation-criteria--architectural-trade-offs)
+- [How to Contribute](#how-to-contribute)
+- [Disclaimer](#disclaimer)
 
-**Made for security architects, SOC analysts, and organizations choosing their managed endpoint protection strategy.**  
+---
 
-Let's make endpoint protection more open at the tooling layer, but with clear eyes about the human expertise and 24/7 monitoring that managed services uniquely provide.
+## Sector Overview & Market Dynamics
+
+The global **Managed Detection and Response (MDR) and Managed Endpoint Protection** sector is estimated at **$5.1B–$6.2B in 2025–2026**, expanding at a rapid **21–23% CAGR** driven by pervasive cybersecurity skill shortages, advanced ransomware campaigns, and distributed remote-work footprints. The industry exhibits **moderate consolidation at the pure technology platform layer** (dominated by major vendors like CrowdStrike, Microsoft, and SentinelOne) but remains **highly fragmented across managed service delivery**, where specialized MDR providers, boutique SOC operations, and regional MSSPs compete aggressively on human expertise, SLA guarantees, multi-signal telemetry integration, and customized containment runbooks.
+
+---
+
+## SaaS & Hosted Managed Endpoint Protection Platforms
+
+Managed Endpoint Protection delivers 24/7 monitoring, AI-driven behavioral telemetry analysis, proactive human threat hunting, and automated incident containment without demanding an in-house Security Operations Center (SOC).
+
+The table below benchmarks the premier SaaS and hosted platforms, sorted by **Company Size (Revenue / Market Cap / Enterprise Valuation) in descending order**:
+
+| Provider / Platform | Company Size (Valuation / Revenue) | Starting Pricing (Specific Baseline) | Free Tier Limits / Free Trial | Key Capabilities & Ideal Fit |
+| :--- | :--- | :--- | :--- | :--- |
+| **[CrowdStrike Falcon Endpoint Protection Complete](https://www.crowdstrike.com/)** | ~$250B+ Market Cap (~$4.8B FY26 Revenue) | ~$60–$100/endpoint/yr (Falcon Go/Pro baseline); ~$185/endpoint/yr (Falcon Enterprise); Complete adds managed SOC layer (contract minimums apply) | 15-day free trial (Falcon platform modules including Prevent/Insight, up to 25 endpoints, no credit card required) | Industry gold-standard combining Falcon Prevent (NGAV), Insight (EDR), and OverWatch threat hunting with full turnkey surgical remediation by CrowdStrike analysts. |
+| **[SentinelOne Vigilance / Singularity](https://www.sentinelone.com/)** | ~$8.9B Market Cap (~$1.0B FY26 Revenue) | $69.99/endpoint/yr (Singularity Core); $179.99/endpoint/yr (Singularity Complete EDR); Vigilance Managed Hunt/Respond available as scoped add-on | 14-day to 30-day guided Proof of Concept (POC) with up to 14 days telemetry retention (partner/sales provisioned, no permanent free tier) | Autonomous client-side behavioral AI detection with patented 1-Click Rollback for ransomware recovery, paired with 24/7 Vigilance human hunting specialists. |
+| **[Arctic Wolf Managed Endpoint](https://arcticwolf.com/)** | $4.3B Private Valuation (~$400M+ ARR) | Mid-five-figure entry (~$25,000–$35,000/yr baseline deployment across endpoints/identities; quote-based) | No standard self-service free trial; episodic access via Cyber JumpStart Portal and free guided security posture/readiness evaluations | Delivered via dedicated Concierge Security Teams (CST) providing continuous managed hunting across endpoints, cloud, identity, and network sensors. |
+| **[Sophos MDR (Intercept X)](https://www.sophos.com/)** | $3.9B Enterprise Buyout (Thoma Bravo; acquired Secureworks for $859M) | ~$50–$70/endpoint/yr (Intercept X Advanced); ~$100–$110/endpoint/yr (Endpoint + XDR); ~$239/endpoint/yr list (Sophos MDR Complete) | 30-day fully functional free trial (Intercept X Advanced / XDR console; full managed MDR requires scoped partner evaluation) | Comprehensive threat prevention with CryptoGuard anti-ransomware, deep exploit mitigation, and 24/7 analyst response with optional breach protection warranty. |
+| **[Huntress Managed EDR](https://www.huntress.com/)** | $1.5B Private Valuation (~$250M+ ARR) | $8.99/endpoint/month (MSRP starting tier; scales down to ~$7.99/endpoint/month with volume commitments) | 14-day fully functional free trial (no credit card required, includes Managed EDR, ITDR, and SIEM for testing on active endpoints) | Tailor-made for mid-market and MSP environments; specializes in detecting persistent footholds, living-off-the-land binaries (LotL), and human-assisted remediation runbooks. |
+| **[eSentire Managed Endpoint](https://www.esentire.com/)** | $1.0B+ Private Unicorn Valuation (~$200M+ Revenue) | Custom enterprise baseline starting at ~$15,000–$25,000/yr (multi-signal Atlas platform scoping based on asset volume) | No permanent free tier or self-service trial; scoped enterprise Proof of Value (POV) available upon security specialist consultation | Multi-signal MDR incorporating endpoint, network, log, and cloud intelligence with an average 15-minute Mean Time to Contain (MTTC). |
+| **[Expel MDR](https://expel.com/)** | $1.0B+ Private Valuation (~$100M–$140M ARR) | ~$10,000–$11,000/yr minimum entry contract (tiered by Starter, Select, and Premium packages based on telemetry volume) | No self-service free trial or free tier; custom guided product tour and interactive POC evaluations provisioned via sales engineering | Bring-Your-Own-Tech (BYOT) MDR powered by Ruxie agentic AI, auto-triaging benign alerts and surfacing transparent, plain-English investigative steps in <30 seconds. |
+| **[Rapid7 MDR](https://www.rapid7.com/)** | ~$900M Market Cap (~$850M FY25 Revenue) | $5.89/asset/month (InsightIDR SIEM/EDR baseline, minimum 500 assets / ~$35,340/yr commitment); Managed Threat Complete quotes custom-scoped | 30-day free trial for underlying InsightIDR / InsightVM software agent; managed MDR delivered via custom scoping engagement | Combines cloud SIEM/EDR telemetry with Rapid7's SOC and threat intelligence engines, integrating vulnerability management and attacker behavior analytics. |
+| **[Secureworks Taegis MDR](https://www.secureworks.com/)** | $859M Acquisition Valuation (by Sophos / Thoma Bravo) | ~$80,000/yr enterprise deployment baseline for turnkey MDR; platform-only XDR modules scale from lower annual commitments | 30-day self-service free trial (Taegis XDR agent evaluation on up to 200 endpoints with sample attack simulations and console access) | Battle-tested cloud-native XDR integrating decades of Counter Threat Unit (CTU) threat research with continuous proactive endpoint hunting and automated orchestrations. |
+| **[Red Canary MDR](https://redcanary.com/)** | $675M Acquisition Price (acquired by Zscaler; ~$140M+ ARR) | ~$120/endpoint/yr and ~$100/user/yr baseline list (public AWS Marketplace reference pricing; contract minimums apply) | No self-service free trial; tailored Proof of Value (POV) and guided telemetry accuracy tests arranged through engineering specialists | Pioneer of behavioral EDR telemetry analysis boasting 99% threat accuracy, integrated GenAI alert triage, and seamless integration with existing CrowdStrike, SentinelOne, or Microsoft Defender agents. |
+
+---
+
+## Open-Source Endpoint Detection, Forensics & Response Projects
+
+Open-source tools offer transparency, customizability, and cost-effective telemetry collection. However, **open source provides the tooling, not the human 24/7 SOC team**. Organizations deploying open-source endpoint tooling must provide their own detection engineers and incident responders.
+
+The table below is sorted by **GitHub Stars in descending order**:
+
+| Project | GitHub Stars (Social Link) | Primary Focus & Architecture | Key Strengths |
+| :--- | :--- | :--- | :--- |
+| **[osquery](https://github.com/osquery/osquery)** | [![Stars](https://img.shields.io/github/stars/osquery/osquery?style=social&color=white)](https://github.com/osquery/osquery/stargazers) | SQL-powered OS instrumentation (cross-platform C++) | Exposes an entire operating system as a relational database; allows querying processes, network sockets, open ports, and file hashes via standard SQL. |
+| **[Wazuh](https://github.com/wazuh/wazuh)** | [![Stars](https://img.shields.io/github/stars/wazuh/wazuh?style=social&color=white)](https://github.com/wazuh/wazuh/stargazers) | Full EDR, XDR & SIEM Platform (GPLv2, C/Python/OpenSearch) | The #1 complete self-hosted endpoint defense platform: file integrity monitoring (FIM), CVE vulnerability auditing, configuration assessment (SCA), and active automated response. |
+| **[Fleet](https://github.com/fleetdm/fleet)** | [![Stars](https://img.shields.io/github/stars/fleetdm/fleet?style=social&color=white)](https://github.com/fleetdm/fleet/stargazers) | Enterprise Osquery management & endpoint security (Go) | Real-time endpoint visibility, device management (MDM), live incident investigation across 100k+ enterprise devices, and scheduled GitOps telemetry policies. |
+| **[GRR Rapid Response](https://github.com/google/grr)** | [![Stars](https://img.shields.io/github/stars/google/grr?style=social&color=white)](https://github.com/google/grr/stargazers) | Enterprise incident response & remote live forensics (Python) | Built by Google for live remote forensic acquisition; collects memory artifacts, file timeline dumps, and scheduled investigations across massive multi-platform fleets. |
+| **[Security Onion](https://github.com/Security-Onion-Solutions/securityonion)** | [![Stars](https://img.shields.io/github/stars/Security-Onion-Solutions/securityonion?style=social&color=white)](https://github.com/Security-Onion-Solutions/securityonion/stargazers) | Enterprise threat hunting & network/host security monitoring | Turnkey security analytics distribution combining host-based endpoint monitoring (Wazuh/Osquery), Zeek network analysis, Suricata IDS, and Sigma hunt rules. |
+| **[Santa](https://github.com/google/santa)** | [![Stars](https://img.shields.io/github/stars/google/santa?style=social&color=white)](https://github.com/google/santa/stargazers) | macOS binary authorization & execution control (Objective-C/C++) | Enforces execution policies at the kernel / EndpointSecurity layer on macOS; allows or blocks execution based on binary hash, signing certificate, or path. |
+| **[Velociraptor](https://github.com/Velocidex/velociraptor)** | [![Stars](https://img.shields.io/github/stars/Velocidex/velociraptor?style=social&color=white)](https://github.com/Velocidex/velociraptor/stargazers) | Query-driven digital forensics & proactive threat hunting (Go) | Powerful Velociraptor Query Language (VQL); surgical endpoint artifact collection, host isolation, live memory dumping, and swift forensic triage across distributed systems. |
+| **[OpenEDR](https://github.com/ComodoSecurity/openedr)** | [![Stars](https://img.shields.io/github/stars/ComodoSecurity/openedr?style=social&color=white)](https://github.com/ComodoSecurity/openedr/stargazers) | Endpoint telemetry sensor & behavioral logging (C/C++) | Telemetry agent capturing real-time operating system events; historically released by Comodo/Xcitium (*Note: deploy with care due to maintenance considerations*). |
+| **[Fibratus](https://github.com/rabbitstack/fibratus)** | [![Stars](https://img.shields.io/github/stars/rabbitstack/fibratus?style=social&color=white)](https://github.com/rabbitstack/fibratus/stargazers) | Windows kernel exploration & behavioral detection (Go/C) | Deep Event Tracing for Windows (ETW) kernel-level telemetry, in-memory YARA scanning, and modular Python 'filaments' for precision threat detection engineering. |
+| **[Rustinel](https://github.com/Karib0u/rustinel)** | [![Stars](https://img.shields.io/github/stars/Karib0u/rustinel?style=social&color=white)](https://github.com/Karib0u/rustinel/stargazers) | Lightweight modern endpoint detection engine (Rust) | Zero-cloud-dependency EDR engine; parses native Windows/Linux/macOS telemetry and matches Sigma rules, YARA patterns, and IOC databases with minimal memory footprint. |
+| **[owLSM](https://github.com/Cybereason-Public/owLSM)** | [![Stars](https://img.shields.io/github/stars/Cybereason-Public/owLSM)](https://github.com/Cybereason-Public/owLSM/stargazers) | In-kernel Linux Sigma prevention via eBPF LSM (C/Go) | High-performance preventive security engine enforcing detection and prevention logic directly within the Linux kernel using BPF Linux Security Modules. |
+
+---
+
+## Evaluation Criteria & Architectural Trade-offs
+
+When choosing between **Commercial Managed Endpoint Protection (MDR/Managed EDR)** and **Open-Source Self-Hosted EDR**:
+
+```mermaid
+flowchart TD
+    A["Evaluate Security Architecture"] --> B{"Dedicated 24/7 SOC Staff Available?"}
+    B -- "No / Lean Team" --> C["SaaS Managed Endpoint Protection (MDR)"]
+    B -- "Yes / Skilled Operators" --> D{"Primary Focus?"}
+    
+    C --> C1["CrowdStrike Complete / SentinelOne Vigilance"]
+    C --> C2["Huntress (SMB / MSP / Lean IT)"]
+    C --> C3["Expel / Red Canary (Multi-vendor BYOT)"]
+    
+    D -- "Continuous SIEM/EDR + Compliance" --> E["Wazuh + Fleet / Osquery"]
+    D -- "Forensic Triage & Live Hunting" --> F["Velociraptor + GRR"]
+    D -- "In-Kernel Linux Prevention" --> G["owLSM / eBPF Sensors"]
+```
+
+1. **Total Cost of Ownership (TCO):** Commercial MDR bundles the cost of software licenses, infrastructure, and human shift staffing. Open-source tooling eliminates license costs but incurs significant personnel overhead for rule authoring, log storage, alert tuning, and 24/7 on-call rotations.
+2. **Mean Time to Detect (MTTD) & Respond (MTTR):** Top-tier MDR services boast sub-30-minute containment guarantees. Self-hosted stacks depend entirely on internal team responsiveness.
+3. **Prevention vs. Investigation:** Tools like **Velociraptor** excel at deep post-incident forensic archaeology ("what happened?"), whereas **SentinelOne**, **CrowdStrike**, and **owLSM** focus on immediate in-line execution interception and behavioral blocking.
+
+---
+
+## How to Contribute
+
+1. Fork the repository.
+2. Add or update entries in `README.md` following the tabular layout.
+3. Verify that all pricing, valuation metrics, and GitHub star URLs are verified and accurate.
+4. Submit a Pull Request with a clear description of the change.
+
+---
+
+## Disclaimer
+
+- This repository is a curated community knowledge base created for educational and architectural evaluation purposes.
+- Product pricing, features, market capitalization, and enterprise valuations fluctuate based on corporate developments, market conditions, and custom contract negotiations. Always verify quotes directly with official vendor sales teams and authorized channel partners.
