@@ -61,9 +61,9 @@ The table below benchmarks the premier SaaS and hosted platforms, sorted by **Co
 
 Open-source tools offer transparency, customizability, and cost-effective telemetry collection. However, **open source provides the tooling, not the human 24/7 SOC team**. Organizations deploying open-source endpoint tooling must provide their own detection engineers and incident responders.
 
-The table below is sorted by **GitHub Stars in descending order**:
+The table below is sorted by **GitHub_Stars in descending order**:
 
-| Project | GitHub Stars (Social Link) | Primary Focus & Architecture | Key Strengths |
+| Project | GitHub_Stars (Social Link) | Primary Focus & Architecture | Key Strengths |
 | :--- | :--- | :--- | :--- |
 | **[osquery](https://github.com/osquery/osquery)** | [![Stars](https://img.shields.io/github/stars/osquery/osquery?style=social&color=white)](https://github.com/osquery/osquery/stargazers) | SQL-powered OS instrumentation (cross-platform C++) | Exposes an entire operating system as a relational database; allows querying processes, network sockets, open ports, and file hashes via standard SQL. |
 | **[Wazuh](https://github.com/wazuh/wazuh)** | [![Stars](https://img.shields.io/github/stars/wazuh/wazuh?style=social&color=white)](https://github.com/wazuh/wazuh/stargazers) | Full EDR, XDR & SIEM Platform (GPLv2, C/Python/OpenSearch) | The #1 complete self-hosted endpoint defense platform: file integrity monitoring (FIM), CVE vulnerability auditing, configuration assessment (SCA), and active automated response. |
